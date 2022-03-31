@@ -1,0 +1,15 @@
+{
+  "name": "w.hong/php-cli-blackjack",
+  "authors": [
+    {
+      "name": "uq-hong",
+      "email": "80738142+uq-hong@users.noreply.github.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  }
+}
