@@ -1,5 +1,8 @@
 <?php
 
+namespace app\decks;
+
+// デッキを作成や引くなどデッキに関するクラス
 class Decks {
   private $decks = [];
 

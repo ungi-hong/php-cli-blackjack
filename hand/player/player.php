@@ -1,8 +1,9 @@
 <?php
 
-require_once(dirname( __FILE__ , 2).'/handBase.php');
+namespace App\Hand\Player;
 
-class Player extends handBase {
+// Playerの動作をまとめたクラス
+class Player extends HandBase {
   public $player = 'あなた';
 }
 

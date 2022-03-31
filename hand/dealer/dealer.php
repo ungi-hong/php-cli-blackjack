@@ -1,7 +1,10 @@
 <?php
 
-require_once(dirname( __FILE__ , 2).'/handBase.php');
+namespace app\hand\dealer;
 
+use app\hand\handBase;
+
+// Dealerの動作をまとめたクラス
 class Dealer extends handBase{
   public $player = 'ディーラー';
 
