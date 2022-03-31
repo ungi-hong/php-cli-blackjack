@@ -1,10 +1,8 @@
 <?php
 
-require_once(dirname( __FILE__ , 2).'/hand/dealer/dealer.php');
-require_once(dirname( __FILE__ , 2).'/hand/player/player.php');
-require_once(dirname( __FILE__ , 2).'/decks/decks.php');
-require_once(dirname( __FILE__ , 2).'/methods/methods.php');
+namespace app\Game;
 
+// game実行の流れ
 class Game {
   //アプリの実行のメソッド
   public function execute(){
@@ -38,7 +36,27 @@ class Game {
 
     $isPlayerTurnContinue = true;
     while($isPlayerTurnContinue) {
-      $isDraw = listenDraw();
+
+      echo "カードを引きますか？引く場合はYを、引かない場合はNを入力してください。?\ny or n: ";
+      $input = trim(fgets(STDIN));
+
+      $isDraw = false;
+      $isRepeat = true;
+
+      while($isRepeat){
+        if($input === 'y') {
+          $isDraw = true;
+          $isRepeat = false;
+        } else if($input === 'n') {
+          $isDraw = false;
+          $isRepeat = false;
+        } else {
+          echo 'yかnで答えてください。';
+          echo "\n";
+          echo "カードを引きますか？引く場合はYを、引かない場合はNを入力してください。?\ny or n: ";
+          $input = trim(fgets(STDIN));
+        }
+      }
 
       if($isDraw) {
         $Player->setDecks($decks->draw());
